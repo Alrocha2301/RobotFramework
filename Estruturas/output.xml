@@ -1,82 +1,361 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0 (Python 3.11.0 on win32)" generated="20221031 08:53:15.910" rpa="false" schemaversion="3">
-<suite id="s1" name="UsandoLogs" source="C:\Users\alexa\Desktop\Projetos\Udemy\RobotFramework\Estruturas\UsandoLogs.robot">
-<test id="s1-t1" name="Caso de teste exemplo 01" line="12">
-<kw name="Usando LOG para mensagens">
+<robot generator="Robot 6.0 (Python 3.11.0 on win32)" generated="20221031 09:24:58.026" rpa="false" schemaversion="3">
+<suite id="s1" name="UsandoLoops" source="C:\Users\alexa\Desktop\Projetos\Udemy\RobotFramework\Estruturas\UsandoLoops.robot">
+<test id="s1-t1" name="Caso de teste exemplo 01" line="13">
+<kw name="Usando FOR com RANGE">
+<for flavor="IN RANGE">
+<var>${COUNT}</var>
+<value>1</value>
+<value>6</value>
+<iter>
+<var name="${COUNT}">1</var>
 <kw name="Log" library="BuiltIn">
-<arg>Minha mensagem de LOG</arg>
+<arg>Meu contador atual é: ${COUNT}. O range será de 1 a 5</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221031 08:53:16.609" level="INFO">Minha mensagem de LOG</msg>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:16.609"/>
+<msg timestamp="20221031 09:24:58.119" level="INFO">Meu contador atual é: 1. O range será de 1 a 5</msg>
+<status status="PASS" starttime="20221031 09:24:58.118" endtime="20221031 09:24:58.119"/>
 </kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${VAR}</var>
-<arg>variável qualquer</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221031 08:53:16.609" level="INFO">${VAR} = variável qualquer</msg>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:16.609"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Posso logar uma ${VAR} no meio de um log</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221031 08:53:16.609" level="INFO">Posso logar uma variável qualquer no meio de um log</msg>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:16.609"/>
-</kw>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:16.609"/>
-</kw>
-<kw name="Usando LOG Console">
+<if>
+<branch type="IF" condition="${COUNT} == 5">
 <kw name="Log To Console" library="BuiltIn">
-<arg>Posso logar na saída do console</arg>
+<arg>O Loop acabou!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:16.609"/>
+<status status="NOT RUN" starttime="20221031 09:24:58.119" endtime="20221031 09:24:58.119"/>
 </kw>
-<kw name="Log Many" library="BuiltIn">
-<arg>Posso logar minha lista completa @{FRUTAS}</arg>
-<doc>Logs the given messages as separate entries using the INFO level.</doc>
-<msg timestamp="20221031 08:53:16.609" level="INFO">Posso logar minha lista completa ['maça', 'banana', 'uva', 'abacaxi']</msg>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:16.609"/>
-</kw>
+<status status="NOT RUN" starttime="20221031 09:24:58.119" endtime="20221031 09:24:58.119"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.119" endtime="20221031 09:24:58.119"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.118" endtime="20221031 09:24:58.119"/>
+</iter>
+<iter>
+<var name="${COUNT}">2</var>
 <kw name="Log" library="BuiltIn">
-<arg>Posso logar somente itens da minha lista ${FRUTAS[0]} - ${FRUTAS[1]}</arg>
+<arg>Meu contador atual é: ${COUNT}. O range será de 1 a 5</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221031 08:53:16.617" level="INFO">Posso logar somente itens da minha lista maça - banana</msg>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:16.617"/>
+<msg timestamp="20221031 09:24:58.120" level="INFO">Meu contador atual é: 2. O range será de 1 a 5</msg>
+<status status="PASS" starttime="20221031 09:24:58.120" endtime="20221031 09:24:58.120"/>
 </kw>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:16.617"/>
+<if>
+<branch type="IF" condition="${COUNT} == 5">
+<kw name="Log To Console" library="BuiltIn">
+<arg>O Loop acabou!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221031 09:24:58.120" endtime="20221031 09:24:58.120"/>
 </kw>
-<kw name="Usando screen shots">
+<status status="NOT RUN" starttime="20221031 09:24:58.120" endtime="20221031 09:24:58.120"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.120" endtime="20221031 09:24:58.136"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.120" endtime="20221031 09:24:58.136"/>
+</iter>
+<iter>
+<var name="${COUNT}">3</var>
 <kw name="Log" library="BuiltIn">
-<arg>Nos testes web, podemos logar Screenshot com a SeleniumLibrary</arg>
+<arg>Meu contador atual é: ${COUNT}. O range será de 1 a 5</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221031 08:53:16.617" level="INFO">Nos testes web, podemos logar Screenshot com a SeleniumLibrary</msg>
-<status status="PASS" starttime="20221031 08:53:16.617" endtime="20221031 08:53:16.617"/>
+<msg timestamp="20221031 09:24:58.136" level="INFO">Meu contador atual é: 3. O range será de 1 a 5</msg>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
 </kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>http://www.robotizandotestes.blogspot.com.br</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221031 08:53:16.617" level="INFO">Opening browser 'chrome' to base url 'http://www.robotizandotestes.blogspot.com.br'.</msg>
-<status status="PASS" starttime="20221031 08:53:16.617" endtime="20221031 08:53:23.877"/>
+<if>
+<branch type="IF" condition="${COUNT} == 5">
+<kw name="Log To Console" library="BuiltIn">
+<arg>O Loop acabou!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
 </kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>nome_do_meuscreenshot.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20221031 08:53:24.152" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="nome_do_meuscreenshot.png"&gt;&lt;img src="nome_do_meuscreenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20221031 08:53:23.878" endtime="20221031 08:53:24.152"/>
+<status status="NOT RUN" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
+</iter>
+<iter>
+<var name="${COUNT}">4</var>
+<kw name="Log" library="BuiltIn">
+<arg>Meu contador atual é: ${COUNT}. O range será de 1 a 5</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.136" level="INFO">Meu contador atual é: 4. O range será de 1 a 5</msg>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221031 08:53:24.152" endtime="20221031 08:53:27.003"/>
+<if>
+<branch type="IF" condition="${COUNT} == 5">
+<kw name="Log To Console" library="BuiltIn">
+<arg>O Loop acabou!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
 </kw>
-<status status="PASS" starttime="20221031 08:53:16.617" endtime="20221031 08:53:27.003"/>
+<status status="NOT RUN" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
+</iter>
+<iter>
+<var name="${COUNT}">5</var>
+<kw name="Log" library="BuiltIn">
+<arg>Meu contador atual é: ${COUNT}. O range será de 1 a 5</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.136" level="INFO">Meu contador atual é: 5. O range será de 1 a 5</msg>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.136"/>
 </kw>
-<status status="PASS" starttime="20221031 08:53:16.609" endtime="20221031 08:53:27.003"/>
+<if>
+<branch type="IF" condition="${COUNT} == 5">
+<kw name="Log To Console" library="BuiltIn">
+<arg>O Loop acabou!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.145"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.145"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.145"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.136" endtime="20221031 09:24:58.145"/>
+</iter>
+<status status="PASS" starttime="20221031 09:24:58.118" endtime="20221031 09:24:58.145"/>
+</for>
+<status status="PASS" starttime="20221031 09:24:58.117" endtime="20221031 09:24:58.146"/>
+</kw>
+<kw name="Usando FOR com LISTA">
+<for flavor="IN">
+<var>${ITEM}</var>
+<value>@{FRUTAS}</value>
+<iter>
+<var name="${ITEM}">maça</var>
+<kw name="Log" library="BuiltIn">
+<arg>minha fruta é ${ITEM}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.161" level="INFO">minha fruta é maça</msg>
+<status status="PASS" starttime="20221031 09:24:58.160" endtime="20221031 09:24:58.161"/>
+</kw>
+<if>
+<branch type="IF" condition="'${ITEM}' == 'abacaxi'">
+<kw name="Log" library="BuiltIn">
+<arg>O Loop acabou!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20221031 09:24:58.161" endtime="20221031 09:24:58.162"/>
+</kw>
+<status status="NOT RUN" starttime="20221031 09:24:58.161" endtime="20221031 09:24:58.162"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.161" endtime="20221031 09:24:58.162"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.160" endtime="20221031 09:24:58.162"/>
+</iter>
+<iter>
+<var name="${ITEM}">banana</var>
+<kw name="Log" library="BuiltIn">
+<arg>minha fruta é ${ITEM}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.162" level="INFO">minha fruta é banana</msg>
+<status status="PASS" starttime="20221031 09:24:58.162" endtime="20221031 09:24:58.162"/>
+</kw>
+<if>
+<branch type="IF" condition="'${ITEM}' == 'abacaxi'">
+<kw name="Log" library="BuiltIn">
+<arg>O Loop acabou!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20221031 09:24:58.162" endtime="20221031 09:24:58.162"/>
+</kw>
+<status status="NOT RUN" starttime="20221031 09:24:58.162" endtime="20221031 09:24:58.162"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.162" endtime="20221031 09:24:58.163"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.162" endtime="20221031 09:24:58.165"/>
+</iter>
+<iter>
+<var name="${ITEM}">uva</var>
+<kw name="Log" library="BuiltIn">
+<arg>minha fruta é ${ITEM}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.166" level="INFO">minha fruta é uva</msg>
+<status status="PASS" starttime="20221031 09:24:58.166" endtime="20221031 09:24:58.166"/>
+</kw>
+<if>
+<branch type="IF" condition="'${ITEM}' == 'abacaxi'">
+<kw name="Log" library="BuiltIn">
+<arg>O Loop acabou!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20221031 09:24:58.167" endtime="20221031 09:24:58.167"/>
+</kw>
+<status status="NOT RUN" starttime="20221031 09:24:58.167" endtime="20221031 09:24:58.167"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.166" endtime="20221031 09:24:58.167"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.166" endtime="20221031 09:24:58.167"/>
+</iter>
+<iter>
+<var name="${ITEM}">abacaxi</var>
+<kw name="Log" library="BuiltIn">
+<arg>minha fruta é ${ITEM}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.168" level="INFO">minha fruta é abacaxi</msg>
+<status status="PASS" starttime="20221031 09:24:58.167" endtime="20221031 09:24:58.168"/>
+</kw>
+<if>
+<branch type="IF" condition="'${ITEM}' == 'abacaxi'">
+<kw name="Log" library="BuiltIn">
+<arg>O Loop acabou!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.168" level="INFO">O Loop acabou!</msg>
+<status status="PASS" starttime="20221031 09:24:58.168" endtime="20221031 09:24:58.168"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.168" endtime="20221031 09:24:58.168"/>
+</branch>
+<status status="PASS" starttime="20221031 09:24:58.168" endtime="20221031 09:24:58.168"/>
+</if>
+<status status="PASS" starttime="20221031 09:24:58.167" endtime="20221031 09:24:58.168"/>
+</iter>
+<status status="PASS" starttime="20221031 09:24:58.160" endtime="20221031 09:24:58.168"/>
+</for>
+<status status="PASS" starttime="20221031 09:24:58.160" endtime="20221031 09:24:58.168"/>
+</kw>
+<kw name="Saindo de um FOR">
+<for flavor="IN">
+<var>${ITEM}</var>
+<value>@{FRUTAS}</value>
+<iter>
+<var name="${ITEM}">maça</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Minha fruta é '${ITEM}'</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221031 09:24:58.169" endtime="20221031 09:24:58.170"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${ITEM}' == 'uva'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20221031 09:24:58.170" endtime="20221031 09:24:58.171"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.169" endtime="20221031 09:24:58.171"/>
+</iter>
+<iter>
+<var name="${ITEM}">banana</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Minha fruta é '${ITEM}'</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221031 09:24:58.171" endtime="20221031 09:24:58.172"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${ITEM}' == 'uva'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20221031 09:24:58.172" endtime="20221031 09:24:58.172"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.171" endtime="20221031 09:24:58.172"/>
+</iter>
+<iter>
+<var name="${ITEM}">uva</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Minha fruta é '${ITEM}'</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221031 09:24:58.172" endtime="20221031 09:24:58.173"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${ITEM}' == 'uva'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20221031 09:24:58.174" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20221031 09:24:58.174" endtime="20221031 09:24:58.174"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.172" endtime="20221031 09:24:58.174"/>
+</iter>
+<status status="PASS" starttime="20221031 09:24:58.169" endtime="20221031 09:24:58.174"/>
+</for>
+<status status="PASS" starttime="20221031 09:24:58.169" endtime="20221031 09:24:58.174"/>
+</kw>
+<kw name="Usando a keyword REPEAT">
+<kw name="Repeat Keyword" library="BuiltIn">
+<arg>4</arg>
+<arg>Log</arg>
+<arg>Vamos logar essa frase!</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<msg timestamp="20221031 09:24:58.175" level="INFO">Repeating keyword, round 1/4.</msg>
+<kw name="Log" library="BuiltIn">
+<arg>Vamos logar essa frase!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.175" level="INFO">Vamos logar essa frase!</msg>
+<status status="PASS" starttime="20221031 09:24:58.175" endtime="20221031 09:24:58.175"/>
+</kw>
+<msg timestamp="20221031 09:24:58.175" level="INFO">Repeating keyword, round 2/4.</msg>
+<kw name="Log" library="BuiltIn">
+<arg>Vamos logar essa frase!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.175" level="INFO">Vamos logar essa frase!</msg>
+<status status="PASS" starttime="20221031 09:24:58.175" endtime="20221031 09:24:58.179"/>
+</kw>
+<msg timestamp="20221031 09:24:58.179" level="INFO">Repeating keyword, round 3/4.</msg>
+<kw name="Log" library="BuiltIn">
+<arg>Vamos logar essa frase!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.179" level="INFO">Vamos logar essa frase!</msg>
+<status status="PASS" starttime="20221031 09:24:58.179" endtime="20221031 09:24:58.179"/>
+</kw>
+<msg timestamp="20221031 09:24:58.179" level="INFO">Repeating keyword, round 4/4.</msg>
+<kw name="Log" library="BuiltIn">
+<arg>Vamos logar essa frase!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221031 09:24:58.179" level="INFO">Vamos logar essa frase!</msg>
+<status status="PASS" starttime="20221031 09:24:58.179" endtime="20221031 09:24:58.179"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.175" endtime="20221031 09:24:58.179"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.175" endtime="20221031 09:24:58.180"/>
+</kw>
+<kw name="Usando FOR IN ENUMERATE">
+<for flavor="IN ENUMERATE">
+<var>${index}</var>
+<var>${item}</var>
+<value>@{FRUTAS}</value>
+<iter>
+<var name="${index}">0</var>
+<var name="${item}">maça</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Na posição ${index} a fruta é ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221031 09:24:58.181" endtime="20221031 09:24:58.183"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.181" endtime="20221031 09:24:58.183"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<var name="${item}">banana</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Na posição ${index} a fruta é ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221031 09:24:58.184" endtime="20221031 09:24:58.185"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.184" endtime="20221031 09:24:58.185"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<var name="${item}">uva</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Na posição ${index} a fruta é ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221031 09:24:58.188" endtime="20221031 09:24:58.189"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.185" endtime="20221031 09:24:58.189"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<var name="${item}">abacaxi</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Na posição ${index} a fruta é ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221031 09:24:58.189" endtime="20221031 09:24:58.190"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.189" endtime="20221031 09:24:58.190"/>
+</iter>
+<status status="PASS" starttime="20221031 09:24:58.181" endtime="20221031 09:24:58.190"/>
+</for>
+<status status="PASS" starttime="20221031 09:24:58.181" endtime="20221031 09:24:58.190"/>
+</kw>
+<status status="PASS" starttime="20221031 09:24:58.116" endtime="20221031 09:24:58.190"/>
 </test>
-<doc>Suíte para exemplificar o uso de LOGs nos testes
-Os LOGs são de grande utilidade, faça LOGs para analisar como seu teste está sendo executado nas entrelinhas
-Os LOGs te ajudam a achar falhas na automação dos seus testes
-Use LOGs sem moderação!!</doc>
-<status status="PASS" starttime="20221031 08:53:15.910" endtime="20221031 08:53:27.007"/>
+<doc>Suíte para exemplificar o uso de LOOPS nos testes
+Os LOOPS devem ser pouco utilizados, mas tem hora que não tem jeito
+e precisamos dele mesmo, então vamos ver como é!
+LOOPS: use com moderação!
+Infelizmente o Loop FOR ainda não tem uma estrutura keyword-driven
+Mas o criador do Robot já disse que estão estudando uma solução!</doc>
+<status status="PASS" starttime="20221031 09:24:58.028" endtime="20221031 09:24:58.194"/>
 </suite>
 <statistics>
 <total>
@@ -85,7 +364,7 @@ Use LOGs sem moderação!!</doc>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="UsandoLogs">UsandoLogs</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="UsandoLoops">UsandoLoops</stat>
 </suite>
 </statistics>
 <errors>
