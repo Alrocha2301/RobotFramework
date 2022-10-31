@@ -18,7 +18,7 @@ Rodando uma keyword dada uma condição = true
     Run Keyword If      '${FRUTAS[1]}' == 'banana'      Log   O item número 1 é a banana!!
 
 Rodando uma keyword dada uma condição = false
-    Run Keyword Unless  '${FRUTAS[1]}' == 'maça'        Log   O item número 1 não é uma maça!!
+    Run Keyword Unless    '${FRUTAS[1]}' == 'maça'    Log    O item número 1 não é maçã!
 
 Armazenando um valor em uma variável dada uma condição
     ${VAR}     Set Variable If   '${FRUTAS[2]}' == 'uva'     uva
